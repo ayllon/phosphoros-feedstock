@@ -1,0 +1,51 @@
+package:
+    name: phosphoros 
+    version: "0.11"
+
+source:
+    url: https://bintray.com/astrorama/archives/download_file?file_path=Phosphoros-0.11.tar.gz
+
+build:
+    number: 3
+
+requirements:
+    build:
+        - cmake >=3.0
+        - make
+        - {{ compiler('cxx') }}
+    host:
+        - elements ==5.2.2
+        - alexandria ==2.11
+        - phosphoroscore ==0.11
+        - boost ==1.69
+        - qt =4
+        - cfitsio
+        - "CCfits[channel=astrorama]"
+        - python
+        - pytest
+    run:
+        - elements ==5.2.2
+        - alexandria ==2.11
+        - phosphoroscore ==0.11
+        - boost ==1.69
+        - qt =4
+        - cfitsio
+        - "CCfits[channel=astrorama]"
+        - astropy
+
+test:
+    commands:
+        - $PREFIX/bin/python $PREFIX/bin/Phosphoros --version
+
+app:
+    entry: Phosphoros GUI
+    icon: phosphoros_64.png
+    summary: A photometric redshift determination tool based on a template fitting method.
+    description: A photometric redshift determination tool based on a template fitting method.
+    own_environment: True
+
+about:
+    home: http://isdc.unige.ch/euclid/phosphoros/
+    license: LGPL
+    summary: A photometric redshift determination tool based on a template fitting method.
+
