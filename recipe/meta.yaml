@@ -15,22 +15,22 @@ requirements:
         - {{ compiler('cxx') }}
     host:
         - elements ==5.2.2
-        - alexandria ==2.11
-        - phosphoroscore ==0.11
+        - alexandria ==2.13
+        - phosphoroscore ==0.13
         - boost ==1.69
         - qt =4
         - cfitsio
-        - "CCfits[channel=astrorama]"
+        - CCfits
         - python
         - pytest
     run:
         - elements ==5.2.2
-        - alexandria ==2.11
-        - phosphoroscore ==0.11
+        - alexandria ==2.13
+        - phosphoroscore ==0.13
         - boost ==1.69
         - qt =4
         - cfitsio
-        - "CCfits[channel=astrorama]"
+        - CCfits
         - astropy
 
 test:
