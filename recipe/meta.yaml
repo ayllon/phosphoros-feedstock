@@ -4,7 +4,8 @@ package:
 
 source:
     url: https://bintray.com/astrorama/archives/download_file?file_path=Phosphoros-0.11.tar.gz
-
+    patches:
+        - trigger_compiler_id.patch 
 build:
     number: 3
 
