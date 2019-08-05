@@ -13,12 +13,26 @@ requirements:
         - cmake >=3.0
         - make
         - {{ compiler('cxx') }}
+        - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
+        - {{ cdt('libx11-devel') }}          # [linux]
+        - {{ cdt('libxext-devel') }}         # [linux]
+        - {{ cdt('libxrender-devel') }}      # [linux]
+        - {{ cdt('libxau-devel') }}          # [linux]
+        - {{ cdt('mesa-libgl-devel') }}      # [linux]
+        - {{ cdt('mesa-libegl-devel') }}     # [linux]
+        - {{ cdt('mesa-dri-drivers') }}      # [linux]
+        - {{ cdt('libxdamage') }}            # [linux]
+        - {{ cdt('libxdamage-devel') }}      # [linux]
+        - {{ cdt('libxxf86vm') }}            # [linux]
+        - {{ cdt('libxfixes') }}             # [linux]
+        - {{ cdt('libxfixes-devel') }}       # [linux]
+        - {{ cdt('libselinux-devel') }}      # [linux]
     host:
         - elements ==5.2.2
         - alexandria ==2.13
         - phosphoroscore ==0.13
-        - boost ==1.69
-        - qt =4
+        - boost >=1.69
+        - qt =5
         - cfitsio
         - CCfits
         - python
@@ -27,8 +41,8 @@ requirements:
         - elements ==5.2.2
         - alexandria ==2.13
         - phosphoroscore ==0.13
-        - boost ==1.69
-        - qt =4
+        - boost >=1.69
+        - qt =5
         - cfitsio
         - CCfits
         - astropy
