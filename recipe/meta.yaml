@@ -1,13 +1,13 @@
 package:
     name: phosphoros 
-    version: "0.11"
+    version: "0.15"
 
 source:
-    url: https://bintray.com/astrorama/archives/download_file?file_path=Phosphoros-0.11.tar.gz
+    url: https://bintray.com/astrorama/archive/download_file?file_path=Phosphoros-0.15.tar.gz
     patches:
         - trigger_compiler_id.patch 
 build:
-    number: 3
+    number: 1
 
 requirements:
     build:
@@ -29,20 +29,20 @@ requirements:
         - {{ cdt('libxfixes-devel') }}       # [linux]
         - {{ cdt('libselinux-devel') }}      # [linux]
     host:
-        - elements ==5.2.2
-        - alexandria ==2.13
-        - phosphoroscore ==0.13
-        - boost >=1.69
+        - elements ==5.8
+        - alexandria ==2.15
+        - phosphoroscore ==0.15
+        - boost ==1.70
         - qt =5
         - cfitsio
         - CCfits
         - python
         - pytest
     run:
-        - elements ==5.2.2
-        - alexandria ==2.13
-        - phosphoroscore ==0.13
-        - boost >=1.69
+        - elements ==5.8
+        - alexandria ==2.15
+        - phosphoroscore ==0.15
+        - boost ==1.70
         - qt =5
         - cfitsio
         - CCfits
