@@ -32,7 +32,7 @@ requirements:
         - elements ==5.8
         - alexandria ==2.15
         - phosphoroscore ==0.15
-        - boost ==1.70
+        - boost-cpp ==1.70
         - qt =5
         - cfitsio
         - CCfits
@@ -42,7 +42,7 @@ requirements:
         - elements ==5.8
         - alexandria ==2.15
         - phosphoroscore ==0.15
-        - boost ==1.70
+        - boost-cpp ==1.70
         - qt =5
         - cfitsio
         - CCfits
@@ -50,7 +50,7 @@ requirements:
 
 test:
     commands:
-        - $PREFIX/bin/python $PREFIX/bin/Phosphoros --version
+        - $PREFIX/bin/Phosphoros --version
 
 app:
     entry: Phosphoros GUI
