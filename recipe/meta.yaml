@@ -7,7 +7,7 @@ source:
     patches:
         - trigger_compiler_id.patch 
 build:
-    number: 2
+    number: 3
 
 requirements:
     build:
@@ -47,6 +47,7 @@ requirements:
         - cfitsio
         - CCfits
         - astropy
+        - matplotlib
 
 test:
     commands:
