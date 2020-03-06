@@ -1,13 +1,19 @@
 package:
     name: phosphoros 
-    version: "0.15"
+    version: {{ GIT_DESCRIBE_TAG }}
 
 source:
-    url: https://bintray.com/astrorama/archive/download_file?file_path=Phosphoros-0.15.tar.gz
+    git_rev: develop
+    git_url: https://{{ environ.get('GIT_USER', '') }}@gitlab.euclid-sgs.uk/SDC-CH/Phosphoros.git
     patches:
-        - trigger_compiler_id.patch 
+        - trigger_compiler_id.patch
+
 build:
-    number: 3
+    number: {{ environ.get('GIT_DESCRIBE_NUMBER', 0) }}
+
+test:
+    commands:
+        - $PREFIX/bin/Phosphoros --version
 
 requirements:
     build:
