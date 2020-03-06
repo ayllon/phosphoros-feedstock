@@ -1,6 +1,6 @@
 package:
     name: phosphoros 
-    version: {{ GIT_DESCRIBE_TAG }}
+    version: 0.15 
 
 source:
     git_rev: develop
