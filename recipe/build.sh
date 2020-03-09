@@ -19,6 +19,7 @@ mkdir -p "${BUILD_DIR}"
 cd "${BUILD_DIR}"
 
 export CMAKE_PROJECT_PATH="${PREFIX}/lib/cmake/ElementsProject:${PREFIX}/lib64/cmake/ElementsProject"
+export CMAKE_MODULE_PATH="${PREFIX}/lib/cmake/ElementsProject:${PREFIX}/lib64/cmake/ElementsProject"
 export BINARY_TAG="x86_64-${PLATFORM}-${COMPILER}${COMPILER_ID}-opt"
 
 cmake -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
