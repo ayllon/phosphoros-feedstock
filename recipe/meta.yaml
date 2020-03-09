@@ -44,6 +44,7 @@ requirements:
         - CCfits
         - python
         - pytest
+        - lxml
     run:
         - elements ==5.8
         - alexandria ==2.15
