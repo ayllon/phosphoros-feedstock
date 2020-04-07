@@ -35,7 +35,7 @@ requirements:
         - {{ cdt('libxfixes-devel') }}       # [linux]
         - {{ cdt('libselinux-devel') }}      # [linux]
     host:
-        - elements ==5.8
+        - elements ==5.10
         - alexandria ==2.15
         - phosphoroscore ==0.15
         - boost-cpp ==1.70
@@ -46,13 +46,10 @@ requirements:
         - pytest
         - lxml
     run:
-        - elements ==5.8
-        - alexandria ==2.15
-        - phosphoroscore ==0.15
         - boost-cpp ==1.70
-        - qt =5
-        - cfitsio
-        - CCfits
+        - phosphoroscore ==0.15
+        - {{ pin_compatible('python', min_pin='x.x', max_pin='x.x') }}
+        - {{ pin_compatible('CCfits') }}
         - astropy
         - matplotlib
 
