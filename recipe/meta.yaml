@@ -1,9 +1,9 @@
 package:
     name: phosphoros 
-    version: 0.15 
+    version: "0.15"
 
 source:
-    git_rev: develop
+    git_rev: "0.15" 
     git_url: https://{{ environ.get('GIT_USER', '') }}@gitlab.euclid-sgs.uk/SDC-CH/Phosphoros.git
     patches:
         - trigger_compiler_id.patch
