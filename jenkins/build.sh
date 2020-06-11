@@ -1,6 +1,8 @@
 #!/bin/sh
 set -x
 
+env
+
 OS=$(uname -s)
 if [ "$OS" = "Darwin" ]; then
     OS_LABEL=osx-64
@@ -33,9 +35,9 @@ source "$(pwd)/miniconda3/bin/activate" root
 conda config --file "$CONDARC" --add channels conda-forge
 conda config --file "$CONDARC" --add channels astrorama
 conda config --file "$CONDARC" --add channels astrorama/label/develop
-conda config --file "$CONDARC" --add channels "https://obswww.unige.ch/~aalvarez/conda/origin/develop/"
 
 conda install --yes --quiet conda-build
+conda install --yes --quiet anaconda-client
 
 #####################################################################
 # Configure MacOSX SDK
@@ -51,5 +53,15 @@ fi
 # Build
 #####################################################################
 
-conda build --no-anaconda-upload ./recipe
+if [ "$GIT_BRANCH" = "origin/master" ]; then
+    LABELS="main"
+else
+    LABELS="${GIT_BRANCH#origin/}"
+fi
+
+if [ -n "${ANACONDA_TOKEN}" ]; then
+    conda build --user "$ANACONDA_USER" --token "$ANACONDA_TOKEN" --label "$LABELS" ./recipe
+else
+    conda build --no-anaconda-upload ./recipe
+fi
 ls -lh

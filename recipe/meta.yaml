@@ -3,7 +3,7 @@ package:
     version: "0.16"
 
 source:
-    git_rev: develop
+    git_rev: develop 
     git_url: https://{{ environ.get('GIT_USER', '') }}@gitlab.euclid-sgs.uk/SDC-CH/Phosphoros.git
     patches:
         - trigger_compiler_id.patch
