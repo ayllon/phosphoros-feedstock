@@ -39,12 +39,12 @@ requirements:
         - alexandria ==2.16
         - phosphoroscore ==0.16
         - boost-cpp ==1.70
-        - qt =5
-        - cfitsio
-        - CCfits
-        - python
-        - pytest
-        - lxml
+        - qt >=5.9,<6
+        - cfitsio >=3.470
+        - CCfits >=2.5
+        - python >=3.8
+        - pytest >=5.3
+        - lxml >=4.5
     run:
         - boost-cpp ==1.70
         - phosphoroscore ==0.16
