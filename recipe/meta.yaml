@@ -47,7 +47,6 @@ requirements:
         - lxml >=4.5
     run:
         - boost-cpp ==1.70
-        - phosphoroscore ==0.16
         - {{ pin_compatible('python', min_pin='x.x', max_pin='x.x') }}
         - {{ pin_compatible('CCfits') }}
         - astropy
