@@ -1,12 +1,16 @@
+{% set name = "Phosphoros" %}
+{% set version = "0.18" %}
+{% set build_number = environ.get('GIT_DESCRIBE_NUMBER', '0') %}
+
 package:
-    name: phosphoros 
-    version: "0.18"
+    name: {{ name|lower }}
+    version: {{ version }}
 
 source:
     git_rev: develop 
     git_url: https://{{ environ.get('GIT_USER', '') }}@gitlab.euclid-sgs.uk/SDC-CH/Phosphoros.git
     patches:
-        - trigger_compiler_id.patch
+      - trigger_compiler_id.patch
 
 build:
     number: {{ environ.get('GIT_DESCRIBE_NUMBER', 0) }}
@@ -35,19 +39,18 @@ requirements:
         - {{ cdt('libxfixes-devel') }}       # [linux]
         - {{ cdt('libselinux-devel') }}      # [linux]
     host:
-        - elements ==5.10
-        - alexandria ==2.17
+        - python
+        - boost-cpp
+        - elements ==5.12
+        - alexandria ==2.17.1
         - phosphoroscore ==0.18
-        - boost-cpp ==1.70
         - qt >=5.9,<6
         - cfitsio >=3.470
         - CCfits >=2.5
-        - python >=3.8
-        - pytest >=5.3
         - lxml >=4.5
     run:
-        - boost-cpp ==1.70
         - {{ pin_compatible('python', min_pin='x.x', max_pin='x.x') }}
+        - {{ pin_compatible('boost-cpp', min_pin='x.x', max_pin='x.x') }}
         - {{ pin_compatible('CCfits') }}
         - astropy
         - matplotlib
