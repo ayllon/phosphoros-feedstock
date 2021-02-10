@@ -1,16 +1,17 @@
 {% set name = "Phosphoros" %}
-{% set version = "0.18" %}
-{% set build_number = environ.get('GIT_DESCRIBE_NUMBER', '0') %}
+{% set version = "0.17" %}
+{% set build_number = 2 %}
 
 package:
     name: {{ name|lower }}
     version: {{ version }}
 
 source:
-    git_rev: "0.17" 
+    git_rev: {{ version }}
     git_url: https://{{ environ.get('GIT_USER', '') }}@gitlab.euclid-sgs.uk/SDC-CH/Phosphoros.git
     patches:
       - trigger_compiler_id.patch
+      - phosphoroscore_0.17.1.patch
 
 build:
     number: 1
@@ -43,7 +44,7 @@ requirements:
         - boost-cpp
         - elements ==5.12
         - alexandria ==2.17.1
-        - phosphoroscore ==0.18
+        - phosphoroscore ==0.17.1
         - qt >=5.9,<6
         - cfitsio >=3.470
         - CCfits >=2.5

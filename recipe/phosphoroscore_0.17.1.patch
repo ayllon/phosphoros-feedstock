@@ -1,0 +1,12 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 75d01dd..794caf0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -12,6 +12,5 @@ set(CXX_SUGGEST_OVERRIDE ON
+ 
+ # Declare project name and version
+ 
+-elements_project(Phosphoros 0.17 USE PhosphorosCore 0.17)
+-
++elements_project(Phosphoros 0.17 USE PhosphorosCore 0.17.1)
+ 
