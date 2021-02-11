@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 boost_cpp:
 - 1.74.0
 channel_sources:
-- astrorama,astrorama/label/develop,conda-forge,defaults
+- astrorama/label/develop,astrorama,conda-forge,defaults
 channel_targets:
 - astrorama develop
 cxx_compiler:
