@@ -55,6 +55,7 @@ requirements:
         - {{ pin_compatible('CCfits') }}
         - astropy
         - matplotlib
+        - scipy
 
 test:
     commands:
