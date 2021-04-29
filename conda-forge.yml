@@ -1,6 +1,6 @@
 channels:
     targets:
-      - ["astrorama", "develop"]
+      - ["astrorama", "scale_factor_sampling"]
 
 test_on_native_only: true
 
