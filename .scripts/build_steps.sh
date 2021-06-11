@@ -18,7 +18,6 @@ export PYTHONUNBUFFERED=1
 export RECIPE_ROOT="${RECIPE_ROOT:-/home/conda/recipe_root}"
 export CI_SUPPORT="${FEEDSTOCK_ROOT}/.ci_support"
 export CONFIG_FILE="${CI_SUPPORT}/${CONFIG}.yaml"
-export GIT_ASKPASS="$(dirname "$0")/git-askpass.sh"
 
 cat >~/.condarc <<CONDARC
 

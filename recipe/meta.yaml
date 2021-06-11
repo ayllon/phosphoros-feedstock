@@ -1,6 +1,6 @@
 {% set name = "Phosphoros" %}
-{% set version = "0.17" %}
-{% set build_number = 3 %}
+{% set version = "1.0" %}
+{% set build_number = 1 %}
 
 package:
     name: {{ name|lower }}
@@ -11,10 +11,9 @@ source:
     git_url: https://{{ environ.get('GIT_USER', '') }}@gitlab.euclid-sgs.uk/SDC-CH/Phosphoros.git
     patches:
       - trigger_compiler_id.patch
-      - phosphoroscore_0.17.1.patch
 
 build:
-    number: 1
+    number: {{ build_number }}
 
 test:
     commands:
@@ -22,6 +21,9 @@ test:
 
 requirements:
     build:
+        - python                             # [build_platform != target_platform]
+        - cross-python_{{ target_platform }} # [build_platform != target_platform]
+        - cython                             # [build_platform != target_platform]
         - cmake >=3.0
         - make
         - {{ compiler('cxx') }}
@@ -42,9 +44,7 @@ requirements:
     host:
         - python
         - boost-cpp
-        - elements ==5.12
-        - alexandria ==2.17.1
-        - phosphoroscore ==0.17.1
+        - phosphoroscore ==1.0
         - qt >=5.9,<6
         - cfitsio >=3.470
         - CCfits >=2.5
