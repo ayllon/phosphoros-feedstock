@@ -1,5 +1,5 @@
 {% set name = "Phosphoros" %}
-{% set version = "0.18" %}
+{% set version = "1.1" %}
 {% set build_number = environ.get('GIT_DESCRIBE_NUMBER', '0') %}
 
 package:
@@ -44,7 +44,7 @@ requirements:
     host:
         - python
         - boost-cpp
-        - phosphoroscore ==1.0
+        - phosphoroscore ==1.1
         - qt >=5.9,<6
         - cfitsio >=3.470
         - CCfits >=2.5
