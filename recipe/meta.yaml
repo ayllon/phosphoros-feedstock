@@ -56,6 +56,7 @@ requirements:
         - astropy
         - matplotlib
         - scipy
+        - requests
 
 test:
     commands:
